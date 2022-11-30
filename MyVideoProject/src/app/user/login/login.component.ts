@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +12,19 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
-  constructor() { }
+  constructor(private auth: AngularFireAuth) { }
 
   ngOnInit(): void {
   }
 
-  login() {
-    console.log(this.credentials)
+  async login() {
+    try {
+        await this.auth.signInWithEmailAndPassword(
+        this.credentials.email, this.credentials.password
+      )
+    } catch (e) {
+      
+    }
   }
 
 }
