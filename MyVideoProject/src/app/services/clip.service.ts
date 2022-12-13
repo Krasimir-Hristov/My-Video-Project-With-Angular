@@ -89,7 +89,7 @@ export class ClipService implements Resolve<IClip | null> {
       const lastDoc = await this.clipsCollection
         .doc(lastDocID)
         .get()
-        .toPromise();
+        //.toPromise();
 
       query = query.startAfter(lastDoc);
     }

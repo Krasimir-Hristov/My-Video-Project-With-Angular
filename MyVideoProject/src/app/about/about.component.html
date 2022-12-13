@@ -1,5 +1,6 @@
   <!-- Main Content -->
-  <p class="container mx-auto mt-4">
-    Some information for me here...!
-  </p>
+  <div *ngIf="user$ | async as user">
+    <h1>Hello {{ user.displayName }}!</h1>
+    <h2>Hello {{ user.email }}!</h2>
+  </div>
   
