@@ -1,0 +1,32 @@
+  <!-- Top Bar -->
+  <section class="container mx-auto my-8 bg-secondary p-6">
+    <div class="rounded relative flex justify-between">
+        <h1>Welcome to your videos !</h1>      
+    </div>
+  </section>
+
+  <div *ngIf="clips.length <= 0">
+    <h1>What you waiting for?</h1>
+    <p>Please try our app, and make some clips!</p>
+  </div>
+
+  <!-- User's Video Section -->
+  <div *ngIf="clips.length > 0" class="container mx-auto my-8">
+    <!-- Video List -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div *ngFor="let clip of clips" 
+      class="mt-6 rounded-tl-2xl rounded-br-2xl shadow-xl bg-secondary flex flex-col justify-start">
+  
+        <!-- Image -->
+        <a href="#">
+          <img class="card-img-top rounded-tl-2xl w-full" [src]="clip.screenshotURL" crossorigin>
+        </a>
+
+        <h2 class="text-3xl mb-2">
+          {{ clip.title }}
+         </h2>
+         
+         
+      </div>
+    </div>
+  </div>
