@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 
-
+//Declare all component In this module
 @NgModule({
   declarations: [
     AuthModalComponent,

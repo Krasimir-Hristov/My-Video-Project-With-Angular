@@ -11,6 +11,8 @@ import { EmailTaken } from '../validators/email-taken';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+
+  //Reactive Forms 
   constructor(private auth: AuthService, private emailTaken: EmailTaken) {}
 
   showAlert = false;
@@ -19,7 +21,7 @@ export class RegisterComponent {
   inSubmission = false;
 
 
-  name = new FormControl<number | null>(null, [
+  name = new FormControl('', [
     Validators.required,
     Validators.minLength(3)
   ]);
@@ -27,7 +29,7 @@ export class RegisterComponent {
     Validators.required,
     Validators.email
   ], [this.emailTaken.validate]);
-  age = new FormControl('', [
+  age = new FormControl<number | null>(null, [
     Validators.required,
     Validators.min(18),
   ]);

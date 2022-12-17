@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
+  //TemplateDrivin Forms
   constructor(private auth: AngularFireAuth) { }
 
   showAlert = false;

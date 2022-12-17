@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+
+// ID system
 interface IModal {
   id: string;
   visible: boolean;
@@ -20,6 +22,7 @@ export class ModalService {
     });
   }
 
+  // Memory leak problem solution
   unregister(id: string) {
     this.modals = this.modals.filter(
       element => element.id !== id

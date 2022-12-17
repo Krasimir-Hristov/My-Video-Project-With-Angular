@@ -6,6 +6,8 @@ import { FormControl } from '@angular/forms';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
+
+//Inputs Validation
 export class InputComponent implements OnInit {
   @Input() control: FormControl = new FormControl();
   @Input() type = 'text';
